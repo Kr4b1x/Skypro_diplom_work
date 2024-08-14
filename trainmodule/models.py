@@ -2,6 +2,9 @@ from django.db import models
 
 
 class TrainModel(models.Model):
+    """
+    Training model.
+    """
     number = models.IntegerField(
         unique=True, db_index=True, verbose_name="номер модели"
     )

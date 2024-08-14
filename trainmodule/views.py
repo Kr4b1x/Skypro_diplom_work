@@ -14,6 +14,9 @@ from trainmodule.serializers import TrainSerializer
 
 
 class TrainModelAPIView(ListAPIView):
+    """
+    List all training models, or create a new training model.
+    """
     queryset = TrainModel.objects.all()
     serializer_class = TrainSerializer
     permission_classes = [AllowAny]
@@ -21,22 +24,34 @@ class TrainModelAPIView(ListAPIView):
 
 
 class TrainModelDetailAPIView(RetrieveAPIView):
+    """
+    Retrieve, update or delete a training model.
+    """
     queryset = TrainModel.objects.all()
     serializer_class = TrainSerializer
     permission_classes = [AllowAny]
 
 
 class TrainModelCreateAPIView(CreateAPIView):
+    """
+    Create a new training model.
+    """
     serializer_class = TrainSerializer
     permission_classes = [IsAuthenticated]
 
 
 class TrainModelUpdateAPIView(UpdateAPIView):
+    """
+    Update an existing training model.
+    """
     queryset = TrainModel.objects.all()
     serializer_class = TrainSerializer
     permission_classes = [IsAuthenticated]
 
 
 class TrainModelDestroyAPIView(DestroyAPIView):
+    """
+    Delete a training model.
+    """
     queryset = TrainModel.objects.all()
     permission_classes = [IsAdmin]
