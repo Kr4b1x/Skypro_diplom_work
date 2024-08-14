@@ -3,6 +3,9 @@ from django.db import models
 
 
 class User(AbstractUser):
+    """
+    Custom User model with email as unique field.
+    """
     username = None
     email = models.EmailField(unique=True, verbose_name="email")
 
